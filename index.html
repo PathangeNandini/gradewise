@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" />
+    <meta name="theme-color" content="#0B0B12" />
+    <meta name="description" content="GradeWise — Smart CGPA calculator and predictor for VIT-style grading. Calculate semester GPA, simulate grade improvements, predict your final CGPA, and upload your VTOP grade history instantly." />
+    <meta name="keywords" content="CGPA calculator, VIT, GPA calculator, grade predictor, semester GPA, VTOP" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="GradeWise" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <meta property="og:title" content="GradeWise — Smart CGPA Calculator" />
+    <meta property="og:description" content="Calculate, simulate, and predict your CGPA in seconds." />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <title>GradeWise — Smart CGPA Calculator</title>
+
+    <script>
+      // Prevent theme flash: apply saved theme before paint
+      (function () {
+        try {
+          var saved = localStorage.getItem("gw-theme");
+          var theme = saved === "light" || saved === "dark"
+            ? saved
+            : (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
